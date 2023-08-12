@@ -38,6 +38,8 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+// /movies/:id/actors
+
 const setActors=catchError(async(req,res)=>{
     const {id}=req.params
     const movie =await Movie.findByPk(id)
@@ -48,7 +50,7 @@ const setActors=catchError(async(req,res)=>{
     return res.json(actors)
 })
 
-
+// /movies/:id/directors
 const setDirectors=catchError(async(req,res)=>{
     const {id}=req.params
     const movie =await Movie.findByPk(id)
@@ -59,6 +61,7 @@ const setDirectors=catchError(async(req,res)=>{
     return res.json(directors)
 })
 
+// /movies/:id/genres
 const setGenres=catchError(async(req,res)=>{
     const {id}=req.params
     const movie =await Movie.findByPk(id)
