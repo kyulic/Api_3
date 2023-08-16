@@ -23,7 +23,7 @@ test("POST-> URL_DIRECTORS, shoult return status code 201 ", async() => {
 
     expect(res.status).toBe(201)
     expect(res.body).toBeDefined()
-    expect(res.body.name).toBe(director.name)
+    expect(res.body.firstName).toBe(director.firstName)
  })
 
 
@@ -39,17 +39,17 @@ test("POST-> URL_DIRECTORS, shoult return status code 201 ", async() => {
   });
 
 
-  test("Get ONE -> '/api/v1/genres/:id', should return status code 200, res.body to be defined and res.body.name === director.name", async () => {
+  test("Get ONE -> '/api/v1/genres/:id', should return status code 200, res.body to be defined and res.body.firstName === director.firstName", async () => {
 
     const res = await request(app)
       .get(`${URL_DIRECTORS}/${directorId}`);
   
     expect(res.status).toBe(200);
     expect(res.status).toBeDefined();
-    expect(res.body.name).toBe(director.name);
+    expect(res.body.firstName).toBe(director.firstName);
   }); 
 
-  test("PUT -> URL_DIRECTORS, should return status code 200, res.body to be defined and res.body.name === directorUpdate.name", async () => {
+  test("PUT -> URL_DIRECTORS, should return status code 200, res.body to be defined and res.body.firstName === directorUpdate.firstName", async () => {
 
     const directorUpdate={
     firstName:"Julieta"
@@ -60,7 +60,7 @@ test("POST-> URL_DIRECTORS, shoult return status code 201 ", async() => {
   
     expect(res.status).toBe(200);
     expect(res.status).toBeDefined();
-    expect(res.body.name).toBe(directorUpdate.name);
+    expect(res.body.firstName).toBe(directorUpdate.firstName);
   }); 
 
 

@@ -38,17 +38,17 @@ test("POST-> URL_ACTORS, shoult return status code 201 ", async() => {
   });
 
 
-  test("Get ONE -> '/api/v1/genres/:id', should return status code 200, res.body to be defined and res.body.name === actor.name", async () => {
+  test("Get ONE -> '/api/v1/genres/:id', should return status code 200, res.body to be defined and res.body.firstName === actor.firstName", async () => {
 
     const res = await request(app)
       .get(`${URL_ACTORS}/${actorId}`);
   
     expect(res.status).toBe(200);
     expect(res.status).toBeDefined();
-    expect(res.body.name).toBe(actor.name);
+    expect(res.body.firstName).toBe(actor.firstName);
   }); 
 
-  test("PUT -> URL_ACTORS, should return status code 200, res.body to be defined and res.body.name === actorUpdate.name", async () => {
+  test("PUT -> URL_ACTORS, should return status code 200, res.body to be defined and res.body.firstName === actorUpdate.firstName", async () => {
 
     const actorUpdate={
     firstName:"Julieta"
@@ -59,7 +59,7 @@ test("POST-> URL_ACTORS, shoult return status code 201 ", async() => {
   
     expect(res.status).toBe(200);
     expect(res.status).toBeDefined();
-    expect(res.body.name).toBe(actorUpdate.name);
+    expect(res.body.firstName).toBe(actorUpdate.firstName);
   }); 
 
 
